@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Weather</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" type="module"></script>
+</head>
+<body>
+  <div class="container-global">
+  <div class="header">
+    <h2 id="climate-text">Clima</h2>
+    <button id="options">
+      <svg width="15px" height="15px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.15 28.012v-0.85c0.019-0.069 0.050-0.131 0.063-0.2 0.275-1.788 1.762-3.2 3.506-3.319 1.95-0.137 3.6 0.975 4.137 2.787 0.069 0.238 0.119 0.488 0.181 0.731v0.85c-0.019 0.056-0.050 0.106-0.056 0.169-0.269 1.65-1.456 2.906-3.081 3.262-0.125 0.025-0.25 0.063-0.375 0.094h-0.85c-0.056-0.019-0.113-0.050-0.169-0.056-1.625-0.262-2.862-1.419-3.237-3.025-0.037-0.156-0.081-0.3-0.119-0.444zM20.038 3.988l-0 0.85c-0.019 0.069-0.050 0.131-0.056 0.2-0.281 1.8-1.775 3.206-3.538 3.319-1.944 0.125-3.588-1-4.119-2.819-0.069-0.231-0.119-0.469-0.175-0.7v-0.85c0.019-0.056 0.050-0.106 0.063-0.162 0.3-1.625 1.244-2.688 2.819-3.194 0.206-0.069 0.425-0.106 0.637-0.162h0.85c0.056 0.019 0.113 0.050 0.169 0.056 1.631 0.269 2.863 1.419 3.238 3.025 0.038 0.15 0.075 0.294 0.113 0.437zM20.037 15.575v0.85c-0.019 0.069-0.050 0.131-0.063 0.2-0.281 1.794-1.831 3.238-3.581 3.313-1.969 0.087-3.637-1.1-4.106-2.931-0.050-0.194-0.094-0.387-0.137-0.581v-0.85c0.019-0.069 0.050-0.131 0.063-0.2 0.275-1.794 1.831-3.238 3.581-3.319 1.969-0.094 3.637 1.1 4.106 2.931 0.050 0.2 0.094 0.394 0.137 0.588z"></path>
+      </svg>
+    </button>
+  </div>
+  <section class="container-inf-main">
+    <article class="container-main-climate-current">
+      <div class="container-top">
+        <div class="container-degree-current">
+          <p class="text-now-climate"></p>
+          <div class="container-icon-and-degree">
+            <p></p>
+            <img alt="icon-climate" id="icon-climate-now"/>
+          </div>
+        </div>
+        <div class="container-text-status-cloud-and-feeling">
+          <p class="description-climate"></p>
+          <p class="thermal-sensation"></p>
+        </div>
+      </div>
+      <div class="container-center">
+        <div class="container-degree-and-icon-next" id="container-climate-now">
+          <p class="degree-text"></p>
+          <div class="container-icon-and-hour">
+            <img src="" alt="icon-climate">
+            <p class="time"></p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="container-icon-and-degree-next-days">
+    </article>
+    <article class="container-others-data-of-climate-now">
+      <div id="container-rain" class="container-rain">
+        <div class="container-icon-svg rain">
+          <svg width="25px" height="25px" viewBox="0 0 1024 1024" class="icon"  version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M700.6 188.2c-58.4 0-110.4 31.3-144.2 80.1-21.4-32.7-55.3-53.9-93.6-53.9-58 0-106.1 48.5-115.4 112h-44.9c-68.5 0-123.9 63.7-123.9 142.3 0 78.6 55.5 142.3 123.9 142.3h398.1c101.7 0 184.1-94.6 184.1-211.3 0-116.9-82.4-211.5-184.1-211.5z" fill="none" /><path d="M700.6 164.7c-54.6 0-106 24.6-144.2 68.2-25.3-27-58.3-42-93.6-42-61.6 0-114.6 46.1-131.9 112h-28.4c-79.8 0-144.7 74.4-144.7 165.8s64.9 165.7 144.7 165.7h398.1c113 0 204.9-105.3 204.9-234.8 0-129.6-91.9-234.9-204.9-234.9z m0 422.7H302.5c-56.9 0-103.2-53.3-103.2-118.8s46.3-118.8 103.2-118.8h44.9c10.2 0 18.8-8.3 20.5-19.6 7.8-53.5 47.8-92.4 94.9-92.4 30.5 0 58.5 16.2 76.9 44.4 3.9 5.9 9.9 9.4 16.4 9.5 6.1 0 12.6-3.2 16.6-9 31.3-45.2 77.8-71.1 127.8-71.1 90.1 0 163.4 84.3 163.4 187.9 0.1 103.6-73.2 187.9-163.3 187.9zM286.9 688.4L163.8 829.3c-8.1 9.2-8 24.1 0.2 33.2 4 4.5 9.3 6.8 14.6 6.8 5.4 0 10.7-2.3 14.8-7l123.1-140.9c8.1-9.2 8-24.1-0.2-33.2-8.2-9.2-21.4-9.1-29.4 0.2zM478.2 688.2c-8.2-9.1-21.3-9-29.4 0.2l-61.5 70.4c-8.1 9.2-8 24.1 0.2 33.2 4 4.5 9.3 6.8 14.6 6.8 5.4 0 10.7-2.3 14.8-7l61.5-70.4c8.1-9.3 8-24.1-0.2-33.2zM775.3 688.4l-61.5 70.4c-8.1 9.2-8 24.1 0.2 33.2 4 4.5 9.3 6.8 14.6 6.8 5.4 0 10.7-2.3 14.8-7l61.5-70.4c8.1-9.2 8-24.1-0.2-33.2-8.2-9.2-21.3-9.1-29.4 0.2zM613.5 688.4L490.4 829.3c-8.1 9.2-8 24.1 0.2 33.2 4 4.5 9.3 6.8 14.6 6.8 5.4 0 10.7-2.3 14.8-7l123-140.9c8.1-9.2 8-24.1-0.2-33.2-8.1-9.2-21.3-9.1-29.3 0.2z" /></svg>
+        </div>
+        <div>
+          <p class="text-property">Lluvia</p>
+          <span></span>
+        </div>
+      </div>
+      <div id="container-air">
+        <div class="container-icon-svg not-rain">
+          <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 18C21 18 19.8096 17.5305 19 17.3021C13.8797 15.8574 10.1203 20.1426 5 18.6979C4.19041 18.4695 3 18 3 18M21 12C21 12 19.8096 11.5305 19 11.3021C13.8797 9.85739 10.1203 14.1426 5 12.6979C4.19041 12.4695 3 12 3 12M21 6C21 6 19.8096 5.53048 19 5.30206C13.8797 3.85739 10.1203 8.14261 5 6.69794C4.19041 6.46952 3 6 3 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-property">Viento</p>
+          <span></span>
+        </div>
+      </div>
+      <div id="container-humidity">
+        <div class="container-icon-svg not-rain">
+          <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.5C16.1012 21.5 19.5 18.4372 19.5 14.5714C19.5 12.1555 18.2672 9.71249 16.8732 7.70906C15.4698 5.69214 13.8515 4.04821 12.9778 3.21778C12.4263 2.69364 11.5737 2.69364 11.0222 3.21779C10.1485 4.04821 8.53016 5.69214 7.1268 7.70906C5.73282 9.71249 4.5 12.1555 4.5 14.5714C4.5 18.4372 7.8988 21.5 12 21.5Z"/>
+            <path d="M12 18C11.4747 18 10.9546 17.8965 10.4693 17.6955C9.98396 17.4945 9.54301 17.1999 9.17157 16.8284C8.80014 16.457 8.5055 16.016 8.30448 15.5307C8.10346 15.0454 8 14.5253 8 14" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-property">Humedad</p>
+          <span></span>
+        </div>
+      </div>
+      <div id="container-quality-air">
+        <div class="container-icon-svg not-rain">
+          <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.7639 7C16.3132 6.38625 17.1115 6 18 6C19.6569 6 21 7.34315 21 9C21 10.6569 19.6569 12 18 12H3M8.50926 4.66667C8.87548 4.2575 9.40767 4 10 4C11.1046 4 12 4.89543 12 6C12 7.10457 11.1046 8 10 8H3M11.5093 19.3333C11.8755 19.7425 12.4077 20 13 20C14.1046 20 15 19.1046 15 18C15 16.8954 14.1046 16 13 16H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-property">Calidad De Aire</p>
+          <span class="container-quality-air"><span class="point"></span><span class="circle"></span><span class="quality-text"></span></span>
+        </div>
+      </div>
+    </article>
+    <div class="container-name-location">
+      <span class="circle"></span>
+      <p class="text-name-location"></p>
+    </div>
+  </section>
+  </div>
+</body>
+</html>

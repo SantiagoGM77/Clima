@@ -1,0 +1,404 @@
+* {
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+:root {
+  --colorLetters:#eef0fd;
+  --bgContainers:#242833;
+  --bgIconsOthersValuesClimate:#2c303c;
+  --colorBorderContainer:#2d2e33;
+  --colorValuesOfOthersPropertysClimate:#c1c3d1;
+  --bgPage:#1f1f1f;
+  --colorButtonCloseOptions:#9e9e9e;
+  --colorCircleOption:#999999;
+  --colorCircleFillOption:#a8c8fa;
+  --colorBorderOptions:#303032;
+  --bgInputSearchCity:var(--colorLetters);
+  --colorNameCitysSearch:var(--bgContainers);
+  --bgIconsBottom:#abc7f5;
+}
+
+body {
+  background-color:var(--bgPage);
+  font-family:sans-serif;
+  color:var(--colorLetters);
+}
+
+.container-global {
+  margin:10px auto;
+  max-width:600px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.header {
+  display:flex;
+  justify-content:space-between;
+  padding-inline:5px;
+  position:relative;
+}
+
+.header > button svg {
+  fill:var(--colorLetters)
+}
+
+.container-inf-main {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.container-main-climate-current {
+  background-color:var(--bgContainers);
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  padding:10px;
+  margin-inline:10px;
+  border-radius:15px;
+}
+
+.container-main-climate-current .container-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.container-main-climate-current .container-top .container-degree-current {
+  display:flex;
+  flex-direction:column;
+}
+
+.container-main-climate-current .container-top .container-degree-current .container-icon-and-degree {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:3px;
+}
+
+.container-main-climate-current .container-top .container-degree-current .container-icon-and-degree p {
+  font-size:2.5em;
+  font-weight:bold;
+}
+
+.container-main-climate-current .container-top .container-degree-current .container-icon-and-degree img {
+  width:75px;
+  height:75px;
+}
+
+.container-main-climate-current .container-top .container-text-status-cloud-and-feeling {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.container-main-climate-current .container-top .container-text-status-cloud-and-feeling .description-climate::first-letter {
+  text-transform:uppercase;
+}
+
+.container-main-climate-current .container-top .container-text-status-cloud-and-feeling .thermal-sensation {
+  font-size:0.9em;
+}
+
+.container-main-climate-current .container-center {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:5px;
+  overflow:auto;
+}
+
+.container-main-climate-current .container-center .container-degree-and-icon-next {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  align-items:center;
+}
+
+.container-main-climate-current .container-center .container-degree-and-icon-next .container-icon-and-hour {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.container-main-climate-current .container-center .container-degree-and-icon-next .container-icon-and-hour img {
+  width:50px;
+  height:50px;
+}
+
+.container-main-climate-current .container-center .container-degree-and-icon-next .time {
+  font-size:0.8em;
+  font-weight:450;
+}
+
+.container-inf-main .container-icon-and-degree-next-days {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:10px;
+  overflow:auto;
+  justify-content:flex-start;
+  margin-inline:10px;
+}
+
+.container-inf-main .container-icon-and-degree-next-days .next-day-container {
+  background-color:var(--bgContainers);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  border-radius:10px;
+  padding:7px;
+}
+
+.container-inf-main .container-icon-and-degree-next-days .next-day-container .day-name {
+  font-size:0.85em;
+  font-weight:450;
+}
+
+.container-inf-main .container-icon-and-degree-next-days .next-day-container img {
+  width:40px;
+  height:40px;
+}
+
+.container-inf-main .container-others-data-of-climate-now {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-inline:10px;
+  border-block:1px solid var(--colorBorderContainer);
+  padding-block:8px;
+}
+
+.container-inf-main .container-others-data-of-climate-now .container-rain {
+  display:none;
+}
+
+.container-inf-main .container-others-data-of-climate-now .container-icon-svg {
+  background-color:var(--bgIconsOthersValuesClimate);
+  border-radius:7px;
+  padding:10px;
+}
+
+.container-inf-main .container-others-data-of-climate-now .container-icon-svg.rain{
+  fill:var(--bgIconsBottom);
+}
+
+.container-inf-main .container-others-data-of-climate-now .container-icon-svg.not-rain {
+  stroke:var(--bgIconsBottom);
+}
+
+.container-inf-main .container-others-data-of-climate-now > div {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:15px;
+  align-items:center;
+}
+
+.container-inf-main .container-others-data-of-climate-now > div div {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:10px;
+}
+
+.container-inf-main .container-others-data-of-climate-now span {display:block;color:var(--colorValuesOfOthersPropertysClimate)}
+
+.container-inf-main .container-others-data-of-climate-now .container-quality-air .circle,.container-name-location .circle {
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:block;
+}
+
+.container-inf-main .container-others-data-of-climate-now .container-quality-air {
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.container-inf-main .container-others-data-of-climate-now .text-property , .container-main-climate-current .container-top .container-text-status-cloud-and-feeling .description-climate, .container-main-climate-current .container-center .container-degree-and-icon-next .degree-text {
+  font-weight:500;
+}
+
+.container-options {
+  background-color:var(--bgPage);
+  position:absolute;
+  top:0;
+  right:0;
+  padding:8px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.container-options > button {
+  color:var(--colorButtonCloseOptions);
+  padding-top:8px;
+  border-top:1px solid var(--colorBorderOptions);
+}
+
+.container-options .container-option {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.container-options .container-option.container-search {
+  gap:10px;
+  padding-bottom:20px;
+  position:relative;
+  flex-direction:row;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+}
+
+.container-options .container-option.container-search svg {
+  stroke:var(--colorLetters);
+}
+
+.container-options .container-option .options-for-select{
+  align-self:center;
+}
+
+.container-options .container-option input {
+  width:100px;
+  border-radius:15px;
+  outline:none;
+  border:none;
+  padding:2px 5px;
+  background-color:var(--bgInputSearchCity);
+  align-self:center;
+  position:relative;
+}
+
+.container-options .container-option input::placeholder {
+  font-size:0.8em;
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.container-options .container-option .name-option {
+  font-size:0.9em;
+  font-weight:bold;
+  border-bottom:1px solid var(--colorBorderOptions);
+  padding-bottom:10px;
+}
+
+.container-options .container-option .options-for-select {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.container-options .container-option .options-for-select .option {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:10px;
+  align-items:center;
+}
+
+.container-options .container-option .options-for-select .option div, .container-options .container-option .options-for-select .option p {
+  pointer-events:none;
+}
+
+.container-options .container-option .options-for-select .option .circle {
+  width:15px;
+  height:15px;
+  border:1px solid var(--colorCircleOption);
+  border-radius:50%;
+  position:relative;
+}
+
+.container-options .container-option .options-for-select .option .circle .fill {
+  position:absolute;
+  width:70%;
+  height:70%;
+  display:block;
+  border-radius:50%;
+  background-color:var(--colorCircleFillOption);
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%) scale(0);
+  transition:transform 150ms linear;
+}
+
+.container-options .container-option .options-for-select .option .circle.color-select-option {
+  border-color:var(--colorCircleFillOption);
+}
+
+.container-options .container-option .options-for-select .option .circle .fill.scale-1 {
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.container-options .container-option .text,.container-inf-main .container-icon-and-degree-next-days .next-day-container .degree-text {
+  font-size:0.8em;
+}
+
+.container-name-location .circle {
+  background-color:#4487f7;
+  visibility:hidden;
+}
+
+.container-name-location {
+  display:flex;
+  justify-content:flex-start;
+  gap:5px;
+  align-items:center;
+  padding-left:10px;
+}
+
+.container-name-location .text-name-location {
+  font-size:0.8em;
+  font-weight:bold;
+}
+
+.container-similar-cities {
+  display:flex;
+  flex-direction:column;
+  background-color:var(--colorLetters);
+  gap:10px;
+  position:absolute;
+  top:calc(100% - 15px);
+  left:50%;
+  transform:translateX(-50%);
+  padding:5px;
+  visibility:hidden;
+  z-index:1;
+  width:max-content;
+  max-width:100%;
+  overflow:auto;
+}
+
+.container-similar-cities p {
+  color:var(--colorNameCitysSearch);
+  font-weight:300;
+  font-size:0.85em;
+}
+
+button {
+  border:none;
+  outline:none;
+  background-color:transparent;
+}
+
+@media (prefers-color-scheme:light) {
+  :root {
+    --bgPage:#fff;
+    --bgContainers:#00000018;
+    --colorLetters:#011d35;
+    --colorValuesOfOthersPropertysClimate:#83899e;
+    --colorBorderContainer:#ecf2f8;
+    --bgIconsOthersValuesClimate:#e6edff;
+    --colorCircleOption:#656565;
+    --colorCircleFillOption:#0b57cf;
+    --colorBorderOptions:#ecedee;
+    --colorButtonCloseOptions:#5f5f5f;
+    --bgInputSearchCity:#f2f2f2;
+    --colorNameCitysSearch:#fff;
+    --bgIconsBottom:#1e5fc3;
+  }
+}
