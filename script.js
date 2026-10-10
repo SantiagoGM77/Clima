@@ -166,7 +166,7 @@ function getWeatherOfMyPositionPlace (setNameCity) {
   
   navigator.geolocation.getCurrentPosition(position=>{
     let {latitude,longitude} = position.coords;
-    
+    console.log(latitude,longitude)
     getAllInformationOfWeather(latitude,longitude)
     
     coordsOfCity.set("latitude",latitude);
@@ -257,7 +257,7 @@ function setQualityAirOfNow ({list}) {
 }
 
 function getQualityAir (lat,lon) {
-  fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`).then(res=>res.json()).then(res=>setQualityAirOfNow(res)).catch(err=>console.log(err))
+  fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${apiKey}`).then(res=>res.json()).then(res=>setQualityAirOfNow(res)).catch(err=>console.log(err))
 }
 
 function setInformationOfClimateForNextHoursAndDays ({list}) {
